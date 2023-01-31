@@ -20,6 +20,7 @@ double l1 = Convert.ToDouble((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)+(z2-z1)*(z2-z1));
 double len = Math.Sqrt(l1);
 
 string graph = "3D";
-if (z1==0 && z2==0) graph = "2D";
+if ((x1==0 && x2==0) || (y1==0 && y2==0) || (z1==0 && z2==0)) graph = "2D";
+if (((x1==0 && x2==0) && (y1==0 && y2==0)) || ((y1==0 && y2==0) && (z1==0 && z2==0)) || ((x1==0 && x2==0) && (z1==0 && z2==0))) graph = "1D";
 
-Console.WriteLine($"Расстояние между точками в {graph} плоскости: {len}");
+Console.WriteLine($"Расстояние между точками в {graph} пространстве: {len}");
